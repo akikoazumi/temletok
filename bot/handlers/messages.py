@@ -2,6 +2,12 @@ from aiogram.types import Message
 from bot import dp, bot
 from aiogram import types
 from bot.api import MobileTikTokAPI, TikTokAPI
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
+
+#some code
+
+studyboi = InlineKeyboardButton('Channel Bot', url='https://t.me/nekozu')
+start_keyboard = ReplyKeyboardMarkup(resize_keyboard=True).add(studyboi)
 
 platforms = [MobileTikTokAPI(), TikTokAPI()]
 
@@ -10,7 +16,7 @@ async def send_welcome(message: types.Message):
     """
     This handler will be called when user sends `/start` or `/help` command
     """
-    await message.reply("Hai Aku Adalah Bot Untuk Mendownload Video Tiktok Tanpa Watermark. Silahkan Kirim Videonya Kesini. Powered By @aiogram!")
+    await message.reply("Hai Aku Adalah Bot Untuk Mendownload Video Tiktok Tanpa Watermark. Silahkan Kirim Videonya Kesini. Powered By @aiogram!", reply_markup=start_keyboard)
 
 @dp.message_handler()
 async def get_message(message: Message):
