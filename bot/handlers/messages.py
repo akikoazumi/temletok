@@ -1,7 +1,7 @@
 from aiogram.types import Message
 from bot import dp, bot
 from bot.api import MobileTikTokAPI, TikTokAPI
-
+import keyboards as kb
 
 platforms = [MobileTikTokAPI(), TikTokAPI()]
 
@@ -10,7 +10,7 @@ async def send_welcome(message: types.Message):
     """
     This handler will be called when user sends `/start` or `/help` command
     """
-    await message.reply("Hai Aku Adalah Bot Untuk Mendownload Video Tiktok Tanpa Watermark. Silahkan Kirim Videonya Kesini. Powered By @aiogram!")
+    await message.reply("Hai Aku Adalah Bot Untuk Mendownload Video Tiktok Tanpa Watermark. Silahkan Kirim Videonya Kesini. Powered By @aiogram!", reply_markup=kb.start_keyboard)
 
 @dp.message_handler()
 async def get_message(message: Message):
