@@ -7,18 +7,15 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMar
 #some code
 
 studyboi = InlineKeyboardButton('Channel Bot', url='https://t.me/nekozu')
-start_keyboard = ReplyKeyboardMarkup(resize_keyboard=True).add(studyboi)
 
 platforms = [MobileTikTokAPI(), TikTokAPI()]
-
-txt = """Downloaded By @ttgetbot!, Subs Channel @nekozu"""
 
 @dp.message_handler(commands=['start', 'help'])
 async def send_welcome(message: types.Message):
     """
     This handler will be called when user sends `/start` or `/help` command
     """
-    await message.reply("Hai Aku Adalah Bot Untuk Mendownload Video Tiktok Tanpa Watermark. Silahkan Kirim Videonya Kesini. Powered By @aiogram!", reply_markup=start_keyboard)
+    await message.reply("Hai Aku Adalah Bot Untuk Mendownload Video Tiktok Tanpa Watermark. Silahkan Kirim Videonya Kesini. Powered By @aiogram!", reply_markup=studyboi)
 
 @dp.message_handler()
 async def get_message(message: Message):
@@ -26,6 +23,6 @@ async def get_message(message: Message):
         if videos := [v for v in await api.handle_message(message) if v and v.content]:
             for video in videos:
                 await bot.send_video(
-                    message.chat.id, txt, video.content, reply_to_message_id=message.message_id
+                    message.chat.id, video.content, reply_to_message_id=message.message_id
                 )
             break
