@@ -13,7 +13,7 @@ platforms = [MobileTikTokAPI(), TikTokAPI()]
 
 @dp.message_handler(commands=['start', 'help'])
 async def send_welcome(message: types.Message):
-    await message.reply("Hai Aku Adalah Bot Untuk Mendownload Video Tiktok Tanpa Watermark. Silahkan Kirim Videonya Kesini. Powered By @aiogram Dan @nekozu!", reply_markup=buttons)
+    await message.reply("Hai Aku Adalah Bot Untuk Mendownload Video Tiktok Tanpa Watermark. Silahkan Kirim Videonya Kesini. Powered By @aiogram Dan @nekozu!")
 
 @dp.message_handler()
 async def get_message(message: Message):
