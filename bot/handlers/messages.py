@@ -1,5 +1,6 @@
 from aiogram.types import Message
 from bot import dp, bot
+from aiogram import types
 from bot.api import MobileTikTokAPI, TikTokAPI
 
 platforms = [MobileTikTokAPI(), TikTokAPI()]
