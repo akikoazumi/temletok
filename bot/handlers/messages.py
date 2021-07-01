@@ -10,7 +10,7 @@ from aiogram.types.inline_keyboard import (
 #some code
 
 buttons = InlineKeyboardMarkup().add(InlineKeyboardButton(
-        "Channel Bot", url='t.me/nekozu')
+        "Channel Bot", url='t.me/nekozu')]]
 
 platforms = [MobileTikTokAPI(), TikTokAPI()]
 
