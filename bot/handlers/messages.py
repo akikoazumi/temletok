@@ -3,10 +3,14 @@ from bot import dp, bot
 from aiogram import types
 from bot.api import MobileTikTokAPI, TikTokAPI
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
-
+from aiogram.types.inline_keyboard import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup
+)
 #some code
 
-studyboi = InlineKeyboardButton('Channel Bot', url='https://t.me/nekozu')
+buttons = InlineKeyboardMarkup().add(InlineKeyboardButton(
+        "Channel Bot", url='t.me/nekozu'
 
 platforms = [MobileTikTokAPI(), TikTokAPI()]
 
