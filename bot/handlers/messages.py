@@ -11,6 +11,8 @@ start_keyboard = ReplyKeyboardMarkup(resize_keyboard=True).add(studyboi)
 
 platforms = [MobileTikTokAPI(), TikTokAPI()]
 
+txt = """Downloaded By @ttgetbot!, Subs Channel @nekozu"""
+
 @dp.message_handler(commands=['start', 'help'])
 async def send_welcome(message: types.Message):
     """
@@ -24,6 +26,6 @@ async def get_message(message: Message):
         if videos := [v for v in await api.handle_message(message) if v and v.content]:
             for video in videos:
                 await bot.send_video(
-                    message.chat.id, video.content, reply_to_message_id=message.message_id
+                    message.chat.id, txt, video.content, reply_to_message_id=message.message_id
                 )
             break
